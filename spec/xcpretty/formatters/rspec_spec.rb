@@ -9,7 +9,7 @@ module XCPretty
   describe RSpec do
 
     before(:each) do
-      @formatter = RSpec.new(false, false)
+      @formatter = RSpec.new(false, false, false)
     end
 
     it "prints dots in the same line" do

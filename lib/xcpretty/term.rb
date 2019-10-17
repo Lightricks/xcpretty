@@ -10,5 +10,9 @@ module XCPretty
     def self.color?
       STDOUT.tty?
     end
+
+    def self.unmatched?
+      false
+    end
   end
 end

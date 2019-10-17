@@ -40,9 +40,10 @@ end
 module XCPretty
   class DummyFormatter < Formatter
 
-    def initialize(unicode, colorize)
+    def initialize(unicode, colorize, unmatched)
       @use_unicode = unicode
       @colorize = colorize
+      @unmatched = unmatched
     end
 
     def pretty_format(text)

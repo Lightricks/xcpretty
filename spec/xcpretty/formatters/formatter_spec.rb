@@ -8,7 +8,7 @@ module XCPretty
   describe Formatter do
 
     before(:each) do
-      @formatter = Formatter.new(true, true)
+      @formatter = Formatter.new(true, true, false)
     end
 
     it "initializes with unicode" do
@@ -17,6 +17,10 @@ module XCPretty
 
     it "initializes with color" do
       @formatter.colorize?.should == true
+    end
+
+    it "initializes with @unmatched = false" do
+      @formatter.unmatched?.should == false
     end
 
     it "outputs to new lines by default" do
@@ -152,5 +156,15 @@ UI spec
 
 #{@formatter.red(SAMPLE_EXECUTED_TESTS)})
     end
+
+    it "show unmatched lines with @unmatched = true" do
+      @formatter = Formatter.new(true, true, true)
+      @formatter.format_other(SAMPLE_FORMAT_OTHER_UNRECOGNIZED_STRING).should == "unmatched: " + SAMPLE_FORMAT_OTHER_UNRECOGNIZED_STRING
+    end
+
+    it "hide unmatched lines with @unmatched = false" do
+      @formatter.format_other(SAMPLE_FORMAT_OTHER_UNRECOGNIZED_STRING).should == ""
+    end
+
   end
 end

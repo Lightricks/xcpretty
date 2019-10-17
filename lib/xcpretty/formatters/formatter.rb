@@ -93,9 +93,10 @@ module XCPretty
 
     attr_reader :parser
 
-    def initialize(use_unicode, colorize)
+    def initialize(use_unicode, colorize, unmatched)
       @use_unicode = use_unicode
       @colorize = colorize
+      @unmatched = unmatched
       @parser = Parser.new(self)
     end
 
@@ -113,6 +114,10 @@ module XCPretty
 
     def use_unicode?
       !!@use_unicode
+    end
+
+    def unmatched?
+      !!@unmatched
     end
 
     # Will be printed by default. Override with '' if you don't want summary
@@ -173,9 +178,12 @@ module XCPretty
     end
 
     def format_other(text)
-      ""
+      if @unmatched && text && !text.empty? && !text.gsub(/\s+/, '').empty?
+        "unmatched: " + text.rstrip
+      else
+        ""
+      end
     end
-
 
     private
 

@@ -29,7 +29,8 @@ report_formats = {
 printer_opts = {
   unicode: XCPretty::Term.unicode?,
   colorize: XCPretty::Term.color?,
-  formatter: XCPretty::Simple
+  formatter: XCPretty::Simple,
+  unmatched: XCPretty::Term.unmatched?
 }
 
 OptionParser.new do |opts|
@@ -51,6 +52,9 @@ OptionParser.new do |opts|
   end
   opts.on('--[no-]utf', 'Use unicode characters in output. Default is auto.') do |value|
     printer_opts[:unicode] = value
+  end
+  opts.on('--[no-]unmatched', 'Show unmatched lines in output. Default is false.') do |value|
+    printer_opts[:unmatched] = value
   end
   opts.on("-r", "--report FORMAT", "Run FORMAT reporter",
           "  Choices: #{report_formats.keys.join(', ')}") do |format|
