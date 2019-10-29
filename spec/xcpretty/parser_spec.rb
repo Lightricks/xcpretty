@@ -9,7 +9,7 @@ module XCPretty
   describe Parser do
 
     before(:each) do
-      @formatter = Formatter.new(false, false)
+      @formatter = Formatter.new(false, false, false)
       @parser = Parser.new(@formatter)
     end
 

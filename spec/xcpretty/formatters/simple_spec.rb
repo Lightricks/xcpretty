@@ -9,7 +9,7 @@ module XCPretty
     describe Simple do
 
       before(:each) do
-        @formatter = Simple.new(false, false)
+        @formatter = Simple.new(false, false, false)
       end
 
       it "formats analyzing" do

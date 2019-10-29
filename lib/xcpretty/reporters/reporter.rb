@@ -15,7 +15,7 @@ module XCPretty
     end
 
     def initialize(options)
-      super(true, true)
+      super(true, true, false)
       load_dependencies
       @filepath = options[:path] || self.class::FILEPATH
       @test_count = 0

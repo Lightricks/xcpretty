@@ -6,7 +6,7 @@ module XCPretty
 
     attr_reader :counter
 
-    def initialize(unicode, color)
+    def initialize(unicode, color, unmatched)
       super
       @counter = 0
     end

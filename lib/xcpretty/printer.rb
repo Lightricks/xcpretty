@@ -10,7 +10,7 @@ module XCPretty
 
     def initialize(params)
       klass = params[:formatter]
-      @formatter = klass.new(params[:unicode], params[:colorize])
+      @formatter = klass.new(params[:unicode], params[:colorize], params[:unmatched])
     end
 
     def finish
