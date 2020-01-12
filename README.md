@@ -1,17 +1,30 @@
+### Note from Lightricks:
+This is a fork of xcpretty which we use at Lightricks.  
+We allow outside contributions, as long as they are well documented and well tested.
+
 ![logo](http://i.imgur.com/i2fElxx.png)
 
 __`xcpretty` is a fast and flexible formatter for `xcodebuild`__.<br/>
 It does one thing, and it should do it well.
 
-[![Gem version](http://img.shields.io/gem/v/xcpretty.svg)](http://rubygems.org/gems/xcpretty)
-[![Build Status](https://travis-ci.org/supermarin/xcpretty.svg?branch=master)](https://travis-ci.org/supermarin/xcpretty)
-[![Code Climate](http://img.shields.io/codeclimate/github/supermarin/xcpretty.svg)](https://codeclimate.com/github/supermarin/xcpretty)
-[![Reviewed by Hound](https://img.shields.io/badge/Reviewed_by-Hound-8E64B0.svg)](https://houndci.com)
+[![Build Status](https://circleci.com/gh/Lightricks/xcpretty.svg?style=shield)](https://circleci.com/gh/Lightricks/xcpretty)
 
 ## Installation
-``` bash
-$ gem install xcpretty
+Since this fork isn't pushed to RubyGems, you can't install it normally from RubyGems.  
+You'll have to install it using this repository as the source.
+
+With [bundler](https://bundler.io/), add the following line to your Gemfile:
 ```
+gem "xcpretty", git:"https://github.com/Lightricks/xcpretty"
+```
+and run `bundle` or `bundle install`.  
+You can also install a specific branch or revision using `branch: <BRANCH>` and `ref: <REF>`.
+
+With [specific_install](https://rubygems.org/gems/specific_install/) gem, run the following command:
+``` bash
+$ gem specific_install https://github.com/Lightricks/xcpretty
+```
+You can also install a specific branch or revision using `--ref <REF>` and `--branch <BRANCH>`.
 
 ## Usage
 ``` bash
